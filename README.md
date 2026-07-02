@@ -45,13 +45,38 @@ Set a real WalletConnect project ID in `.env.local`:
 
 ```bash
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
-NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8000
+NEXT_PUBLIC_BACKEND_API_URL=http://localhost:8000
 ```
 
 Run the local development server:
 
 ```bash
 npm run dev
+```
+
+For the full local stack, start each service in order in separate terminals:
+
+1. Run `ai-engine` on `8001`.
+
+```bash
+cd ../ai-engine
+uvicorn app.main:app --reload --port 8001
+```
+
+2. Run `backend-api` on `8000`.
+
+```powershell
+cd ../backend-api
+$env:AI_ENGINE_BASE_URL='http://localhost:8001'
+uvicorn app.main:app --reload --port 8000
+```
+
+3. Run `web-app` on `3000`.
+
+```powershell
+cd ../web-app
+$env:NEXT_PUBLIC_BACKEND_API_URL='http://localhost:8000'
+npm run dev -- --port 3000
 ```
 
 Type-check the project:
@@ -78,4 +103,4 @@ The app does not contain private keys, backend secrets, contract write flows, or
 
 ## Backend Connection
 
-The portfolio, research, and AI app pages call `backend-api` through `NEXT_PUBLIC_BACKEND_API_URL`. Run the backend locally on `http://127.0.0.1:8000` and allow the web app origin through backend CORS.
+The portfolio and AI app pages call `backend-api` through `NEXT_PUBLIC_BACKEND_API_URL`. Run the backend locally on `http://localhost:8000` and allow the web app origin through backend CORS. Frontend API calls are isolated under `lib/api`.
