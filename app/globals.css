@@ -163,6 +163,37 @@ p {
   letter-spacing: -0.05em;
 }
 
+.asset-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.asset-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+  color: var(--muted);
+}
+
+.asset-row:first-child {
+  padding-top: 0;
+}
+
+.asset-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.asset-row strong {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
 @media (max-width: 900px) {
   .hero,
   .grid,
