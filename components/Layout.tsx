@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { WalletConnectButton } from './wallet/WalletConnectButton'
 
 type LayoutProps = {
@@ -17,15 +18,15 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="shell">
       <header className="header">
-        <a href="/" className="brand">
+        <Link href="/" className="brand">
           <span className="brand-mark" />
           <span>Valthera</span>
-        </a>
+        </Link>
         <nav className="nav">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <WalletConnectButton />

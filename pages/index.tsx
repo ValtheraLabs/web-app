@@ -1,5 +1,6 @@
 import { FeatureCard } from '@/components/FeatureCard'
 import { Layout } from '@/components/Layout'
+import Link from 'next/link'
 
 export default function HomePage() {
   return (
@@ -13,8 +14,8 @@ export default function HomePage() {
             and risk-aware execution into one professional DeFi terminal.
           </p>
           <div className="button-row">
-            <a className="button" href="/app">Launch App</a>
-            <a className="button secondary" href="/app/ai">Explore AI</a>
+            <Link className="button" href="/app">Launch App</Link>
+            <Link className="button secondary" href="/app/ai">Explore AI</Link>
           </div>
         </div>
         <div className="card">
