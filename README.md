@@ -22,7 +22,10 @@ Provide a secure, AI-native DeFi interface for wallet connection, asset exchange
 - Next.js
 - TypeScript
 - CSS / Tailwind-ready configuration
-- Future: Wagmi, Viem, RainbowKit, TanStack Query
+- Wagmi
+- Viem
+- RainbowKit
+- TanStack Query
 
 ## Local Development
 
@@ -30,6 +33,18 @@ Install dependencies:
 
 ```bash
 npm install
+```
+
+Create a local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Set a real WalletConnect project ID in `.env.local`:
+
+```bash
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
 ```
 
 Run the local development server:
@@ -50,17 +65,12 @@ Build for production:
 npm run build
 ```
 
-## Current MVP-001 Scope
+## Current Scope
 
-This milestone adds the first runnable application shell:
+MVP-001 added the first runnable application shell.
 
-- Landing page
-- App dashboard page
-- Shared layout
-- Shared feature card component
-- Dynamic app section pages
-- Premium dark visual foundation
+MVP-002 adds wallet connection UX, provider setup, a wallet status page, and basic chain/address display.
 
 ## Security Notes
 
-No wallet logic, transaction logic, private keys, or production credentials are included in MVP-001.
+The app does not contain private keys, backend secrets, contract write flows, or production transaction logic.

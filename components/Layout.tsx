@@ -1,3 +1,5 @@
+import { WalletConnectButton } from './wallet/WalletConnectButton'
+
 type LayoutProps = {
   children: JSX.Element | JSX.Element[]
 }
@@ -26,6 +28,7 @@ export function Layout({ children }: LayoutProps) {
             </a>
           ))}
         </nav>
+        <WalletConnectButton />
       </header>
       <main className="main">{children}</main>
     </div>
