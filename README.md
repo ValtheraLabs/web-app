@@ -97,9 +97,11 @@ MVP-001 added the first runnable application shell.
 
 MVP-002 adds wallet connection UX, provider setup, a wallet status page, and basic chain/address display.
 
+MVP Swap Terminal adds a UI-only `/app/swap` terminal with token input and output panels, route preview placeholders, slippage and price impact placeholders, network and wallet display state, AI context, risk warnings, and portfolio impact copy.
+
 ## Security Notes
 
-The app does not contain private keys, backend secrets, contract write flows, or production transaction logic.
+The app does not contain private keys, backend secrets, contract write flows, swap execution, or production transaction logic. The swap terminal is UI-only and does not prepare, sign, submit, or simulate transactions.
 
 ## Backend Connection
 
