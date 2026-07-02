@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import { WalletConnectButton } from './wallet/WalletConnectButton'
 
 type LayoutProps = {
-  children: JSX.Element | JSX.Element[]
+  children: ReactNode
 }
 
 const navigation = [

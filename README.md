@@ -45,6 +45,7 @@ Set a real WalletConnect project ID in `.env.local`:
 
 ```bash
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
+NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8000
 ```
 
 Run the local development server:
@@ -74,3 +75,7 @@ MVP-002 adds wallet connection UX, provider setup, a wallet status page, and bas
 ## Security Notes
 
 The app does not contain private keys, backend secrets, contract write flows, or production transaction logic.
+
+## Backend Connection
+
+The portfolio, research, and AI app pages call `backend-api` through `NEXT_PUBLIC_BACKEND_API_URL`. Run the backend locally on `http://127.0.0.1:8000` and allow the web app origin through backend CORS.
