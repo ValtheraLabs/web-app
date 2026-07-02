@@ -4,33 +4,63 @@ The Valthera web app is the primary user-facing dApp for the ValtheraLabs ecosys
 
 ## Purpose
 
-Provide a secure, AI-native DeFi interface for wallet connection, swaps, portfolio intelligence, token research, and risk-aware execution.
+Provide a secure, AI-native DeFi interface for wallet connection, asset exchange, portfolio intelligence, token research, and risk-aware user workflows.
 
 ## MVP Responsibilities
 
 - Wallet connection
 - Network selection
-- Swap interface
+- Asset terminal interface
 - Portfolio dashboard
 - AI copilot UI
 - Token research panels
 - Risk score display
-- User confirmation flows for all transactions
+- Clear user confirmation flows for future transactions
 
-## Preferred Stack
+## Stack
 
 - Next.js
 - TypeScript
-- Tailwind CSS
-- Wagmi
-- Viem
-- RainbowKit
-- TanStack Query
+- CSS / Tailwind-ready configuration
+- Future: Wagmi, Viem, RainbowKit, TanStack Query
 
-## Non-Custodial Rule
+## Local Development
 
-The web app must never custody user funds. Every on-chain action must be explicitly confirmed and signed by the user wallet.
+Install dependencies:
 
-## First Milestone
+```bash
+npm install
+```
 
-Build a clean app shell with wallet connection, navigation, dashboard placeholder, swap placeholder, and AI copilot placeholder.
+Run the local development server:
+
+```bash
+npm run dev
+```
+
+Type-check the project:
+
+```bash
+npm run typecheck
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## Current MVP-001 Scope
+
+This milestone adds the first runnable application shell:
+
+- Landing page
+- App dashboard page
+- Shared layout
+- Shared feature card component
+- Dynamic app section pages
+- Premium dark visual foundation
+
+## Security Notes
+
+No wallet logic, transaction logic, private keys, or production credentials are included in MVP-001.
