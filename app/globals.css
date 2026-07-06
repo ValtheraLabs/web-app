@@ -257,17 +257,6 @@ h1 {
   overflow: hidden;
 }
 
-.panel::before,
-.metric-card::before,
-.data-state::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--accent), transparent 70%);
-  opacity: 0.65;
-}
-
 .panel-header,
 .panel-body,
 .section-header,
@@ -344,8 +333,8 @@ p {
   justify-content: center;
   border-radius: 999px;
   padding: 0.85rem 1.1rem;
-  background: linear-gradient(135deg, var(--accent), #8a6a2f);
-  color: #081018;
+  background: var(--accent);
+  color: #fff;
   font-weight: 700;
 }
 
@@ -365,18 +354,18 @@ p {
 }
 
 .status-badge-success {
-  border-color: rgba(102, 209, 158, 0.42);
-  color: #9ee8c2;
+  border-color: rgba(39, 174, 96, 0.42);
+  color: #6fcf97;
 }
 
 .status-badge-warning {
-  border-color: rgba(214, 168, 79, 0.5);
-  color: #f2dca4;
+  border-color: rgba(148, 93, 200, 0.5);
+  color: #c8a8e6;
 }
 
 .status-badge-danger {
-  border-color: rgba(239, 107, 115, 0.5);
-  color: #ffb4b9;
+  border-color: rgba(255, 67, 67, 0.5);
+  color: #ff9a9a;
 }
 
 .status-badge-info {
