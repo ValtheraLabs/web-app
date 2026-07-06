@@ -25,10 +25,10 @@
 body {
   margin: 0;
   background:
-    linear-gradient(90deg, rgba(214, 168, 79, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(96, 214, 231, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at top left, rgba(96, 214, 231, 0.14), transparent 30rem),
-    radial-gradient(circle at top right, rgba(214, 168, 79, 0.1), transparent 28rem),
+    linear-gradient(90deg, rgba(148, 93, 200, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(96, 214, 231, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at top left, rgba(148, 93, 200, 0.1), transparent 30rem),
+    radial-gradient(circle at top right, rgba(96, 214, 231, 0.07), transparent 28rem),
     var(--bg);
   background-size: 72px 72px, 72px 72px, auto, auto, auto;
   color: var(--text);
@@ -51,7 +51,7 @@ a {
   gap: 1rem;
   border-bottom: 1px solid var(--border);
   padding: 0.9rem 1.25rem;
-  background: rgba(5, 7, 10, 0.88);
+  background: rgba(19, 19, 22, 0.88);
   backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
@@ -72,12 +72,14 @@ a {
 }
 
 .header-status {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
-  border: 1px solid rgba(214, 168, 79, 0.26);
+  border: 1px solid rgba(148, 93, 200, 0.26);
   border-radius: 999px;
   padding: 0.45rem 0.7rem;
   background: var(--accent-soft);
-  color: #f2dca4;
+  color: #c8a8e6;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -109,12 +111,12 @@ a {
 .brand-mark {
   width: 2rem;
   height: 2rem;
-  border: 1px solid rgba(214, 168, 79, 0.5);
+  border: 1px solid rgba(148, 93, 200, 0.5);
   border-radius: 0.55rem;
   background:
-    linear-gradient(135deg, transparent 42%, rgba(214, 168, 79, 0.9) 43%, rgba(214, 168, 79, 0.9) 56%, transparent 57%),
-    linear-gradient(135deg, #0e1724, #25374c);
-  box-shadow: 0 0 32px rgba(214, 168, 79, 0.28);
+    linear-gradient(135deg, transparent 42%, rgba(148, 93, 200, 0.9) 43%, rgba(148, 93, 200, 0.9) 56%, transparent 57%),
+    linear-gradient(135deg, #1A1A1E, #2E2E35);
+  box-shadow: 0 0 32px rgba(148, 93, 200, 0.28);
 }
 
 .brand-copy {
@@ -144,7 +146,7 @@ a {
   height: calc(100vh - 4rem);
   border-right: 1px solid var(--border);
   padding: 1rem;
-  background: linear-gradient(180deg, rgba(11, 16, 24, 0.92), rgba(5, 7, 10, 0.78));
+  background: var(--panel);
 }
 
 .rail-label {
@@ -196,18 +198,18 @@ a {
 .nav-item:hover,
 .nav-item:focus-visible {
   border-color: var(--border-strong);
-  background: rgba(96, 214, 231, 0.07);
+  background: rgba(148, 93, 200, 0.07);
   outline: 0;
 }
 
 .nav-item[aria-current="page"] {
-  border-color: rgba(214, 168, 79, 0.58);
-  background: linear-gradient(90deg, rgba(214, 168, 79, 0.18), rgba(96, 214, 231, 0.055));
+  border-color: rgba(148, 93, 200, 0.58);
+  background: linear-gradient(90deg, rgba(148, 93, 200, 0.18), rgba(96, 214, 231, 0.055));
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .nav-item[aria-current="page"] span {
-  color: #f2dca4;
+  color: #c8a8e6;
 }
 
 .main {
