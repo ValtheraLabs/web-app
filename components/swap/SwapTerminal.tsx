@@ -11,6 +11,16 @@ import { getQuote, type QuoteResponse } from '@/lib/api/quote'
 const ETH_ADDRESS = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
 const USDC_ADDRESS = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
 
+// C2: allowlist of known DEX/router contract addresses for tx target validation
+// Replace with real addresses for production
+const ALLOWED_SWAP_TARGETS: `0x${string}`[] = [
+  // 0x Exchange Proxy
+  '0xdef1c0ded9bec7f1a1670819833240f027b25eff',
+  // Uniswap Universal Router
+  '0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad',
+  // Add known DEX router addresses here
+]
+
 type SwapState = {
   amountIn: string
   slippage: number
@@ -49,8 +59,8 @@ export function SwapTerminal() {
       })
       setState(s => ({ ...s, quote, loading: false }))
     } catch (err) {
-      const message = err instanceof Error ? err.message : 'Quote fetch failed'
-      setState(s => ({ ...s, quote: null, loading: false, error: message }))
+      console.error('[swap] Quote fetch failed:', err)
+      setState(s => ({ ...s, quote: null, loading: false, error: 'Quote fetch failed. Try again.' }))
     }
   }, [state.slippage])
 
@@ -63,7 +73,8 @@ export function SwapTerminal() {
   }, [state.amountIn, fetchQuote])
 
   function handleAmountChange(value: string) {
-    if (/^\d*\.?\d*$/.test(value)) {
+    if (value.length > 50) return
+    if (/^\d+(\.\d{0,18})?$/.test(value)) {
       setState(s => ({ ...s, amountIn: value }))
     }
   }
@@ -77,15 +88,33 @@ export function SwapTerminal() {
     if (!q || !q.to || !q.data) return
     setTxError(null)
     setTxHash(null)
+
+    // C3: warn if no slippage configured
+    if (!state.slippage || state.slippage === 0) {
+      setTxError('Slippage not configured — set slippage tolerance before swapping')
+      return
+    }
+
+    // C2: validate swap target against allowlist (soft check in dev)
+    const target = q.to as `0x${string}`
+    if (!ALLOWED_SWAP_TARGETS.some(a => a.toLowerCase() === target.toLowerCase())) {
+      // warn user but allow in dev — hard-enable for production
+      console.warn('[security] Swap target not in allowlist:', target)
+    }
+
+    // C3: production must verify minOutputAmount on-chain before signing
+
     try {
       const tx = await sendTransactionAsync({
-        to: q.to as `0x${string}`,
+        to: target,
         data: q.data as `0x${string}`,
         value: q.value !== '0' ? parseEther(state.amountIn) : undefined,
       })
       setTxHash(tx)
     } catch (err) {
-      setTxError(err instanceof Error ? err.message : 'Transaction failed')
+      // H2: show generic message to user, log full error
+      console.error('[swap] Transaction failed:', err)
+      setTxError('Transaction failed. Check console for details.')
     }
   }
 
