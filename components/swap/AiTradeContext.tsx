@@ -1,19 +1,29 @@
-const contextItems = [
-  {
-    label: 'Intent',
-    value: 'Estimate trade context before any wallet action.'
-  },
-  {
-    label: 'Market read',
-    value: 'Waiting for backend market and route intelligence.'
-  },
-  {
-    label: 'Guardrail',
-    value: 'AI output is informational and non-authoritative.'
-  }
-]
+type AiTradeContextProps = {
+  quoteReady: boolean
+  slippage: string
+  provider: string | null
+}
 
-export function AiTradeContext() {
+export function AiTradeContext({ quoteReady, slippage, provider }: AiTradeContextProps) {
+  const contextItems = [
+    {
+      label: 'Intent',
+      value: quoteReady
+        ? 'Real-time quote loaded from backend provider.'
+        : 'Enter an amount to fetch quote.'
+    },
+    {
+      label: 'Market read',
+      value: quoteReady && provider
+        ? `Quote sourced from ${provider}.`
+        : 'Backend quote provider waiting for input.'
+    },
+    {
+      label: 'Guardrail',
+      value: `Slippage tolerance: ${slippage}. Quote is real — execution requires wallet confirmation.`
+    }
+  ]
+
   return (
     <article className="card">
       <p className="eyebrow">AI context</p>

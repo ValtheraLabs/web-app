@@ -4,6 +4,7 @@ type TokenInputProps = {
   tokenSymbol: string
   tokenName: string
   balanceLabel: string
+  helperText?: string
   readOnly?: boolean
   onAmountChange?: (value: string) => void
 }
@@ -14,6 +15,7 @@ export function TokenInput({
   tokenSymbol,
   tokenName,
   balanceLabel,
+  helperText,
   readOnly = false,
   onAmountChange
 }: TokenInputProps) {
@@ -38,6 +40,7 @@ export function TokenInput({
         value={amount}
         onChange={(event) => onAmountChange?.(event.target.value)}
       />
+      {helperText ? <p className="swap-input-helper">{helperText}</p> : null}
     </section>
   )
 }

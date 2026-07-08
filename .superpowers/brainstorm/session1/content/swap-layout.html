@@ -1,0 +1,126 @@
+<h2>Swap Terminal — Kromatika Layout</h2>
+<p class="subtitle">Redesigning the swap terminal to match Kromatika's pool page style</p>
+
+<div class="section">
+  <h3>Current Valthera Swap</h3>
+  <div class="mockup">
+    <div class="mockup-header">Current: 2-column layout</div>
+    <div class="mockup-body" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:8px;padding:12px;background:#131316;">
+      <div style="background:#1A1A1E;border:1px solid #373742;border-radius:12px;padding:16px;">
+        <div style="color:#8F96AC;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;">TOKEN INPUT</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <div style="background:#242429;border-radius:12px;padding:8px 12px;color:#C3C5CB;">ETH</div>
+          <div style="font-size:24px;font-weight:800;color:#fff;">100</div>
+        </div>
+        <div style="text-align:center;margin:8px 0;color:#60d6e7;">↓</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <div style="background:#242429;border-radius:12px;padding:8px 12px;color:#C3C5CB;">USDC</div>
+          <div style="font-size:24px;font-weight:800;color:#fff;">95,000</div>
+        </div>
+      </div>
+      <div style="background:#1A1A1E;border:1px solid #373742;border-radius:12px;padding:16px;">
+        <div style="color:#8F96AC;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;">AI CONTEXT</div>
+        <div style="margin-top:12px;color:#C3C5CB;font-size:13px;line-height:1.5;">
+          AI analysis context panel<br>
+          Risk warnings<br>
+          Portfolio impact
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Proposed Kromatika-Style Swap</h3>
+  <div class="mockup">
+    <div class="mockup-header">New: Centered single-column</div>
+    <div class="mockup-body" style="display:flex;justify-content:center;padding:16px;background:#131316;">
+      <div style="width:420px;background:#1A1A1E;border:1px solid #373742;border-radius:16px;padding:20px;">
+        <div style="display:flex;gap:8px;margin-bottom:16px;">
+          <div style="background:#945DC8;color:#fff;border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700;">Swap</div>
+          <div style="background:transparent;color:#8F96AC;border-radius:999px;padding:6px 16px;font-size:13px;border:1px solid #373742;">Limit</div>
+        </div>
+        
+        <div style="background:#242429;border:1px solid #373742;border-radius:16px;padding:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="background:#2E2E35;border-radius:12px;padding:8px 12px;display:flex;align-items:center;gap:6px;">
+              <div style="width:24px;height:24px;border-radius:999px;background:#945DC8;"></div>
+              <span style="color:#fff;font-weight:700;">ETH</span>
+              <span style="color:#8F96AC;">▼</span>
+            </div>
+            <input style="background:transparent;border:0;color:#fff;font-size:28px;font-weight:700;text-align:right;width:auto;" placeholder="0" value="1.0">
+          </div>
+          <div style="color:#8F96AC;font-size:12px;text-align:right;margin-top:4px;">Balance: 12.5 ETH</div>
+        </div>
+
+        <div style="display:flex;justify-content:center;margin:8px 0;">
+          <div style="width:36px;height:36px;border-radius:999px;border:1px solid #373742;display:flex;align-items:center;justify-content:center;background:#1A1A1E;color:#945DC8;font-size:18px;cursor:pointer;">↓</div>
+        </div>
+
+        <div style="background:#242429;border:1px solid #373742;border-radius:16px;padding:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="background:#2E2E35;border-radius:12px;padding:8px 12px;display:flex;align-items:center;gap:6px;">
+              <div style="width:24px;height:24px;border-radius:999px;background:#2172E5;"></div>
+              <span style="color:#fff;font-weight:700;">USDC</span>
+              <span style="color:#8F96AC;">▼</span>
+            </div>
+            <input style="background:transparent;border:0;color:#fff;font-size:28px;font-weight:700;text-align:right;width:auto;" placeholder="0" value="3,245.60">
+          </div>
+          <div style="color:#8F96AC;font-size:12px;text-align:right;margin-top:4px;">Balance: 15,000 USDC</div>
+        </div>
+
+        <div style="margin:12px 0;display:grid;gap:8px;">
+          <div style="display:flex;justify-content:space-between;background:#242429;border:1px solid #373742;border-radius:12px;padding:10px 12px;">
+            <span style="color:#8F96AC;font-size:13px;">Limit Price</span>
+            <input style="background:transparent;border:0;color:#fff;font-weight:600;text-align:right;width:120px;" placeholder="0.00" value="3,245.60">
+          </div>
+          <div style="display:flex;justify-content:space-between;background:#242429;border:1px solid #373742;border-radius:12px;padding:10px 12px;">
+            <span style="color:#8F96AC;font-size:13px;">Slippage</span>
+            <div style="display:flex;gap:4px;">
+              <span style="background:#2E2E35;border-radius:8px;padding:2px 8px;color:#fff;font-size:12px;font-weight:600;">0.5%</span>
+              <span style="background:transparent;border-radius:8px;padding:2px 8px;color:#8F96AC;font-size:12px;">1.0%</span>
+              <span style="background:transparent;border-radius:8px;padding:2px 8px;color:#8F96AC;font-size:12px;">Custom</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin:12px 0;background:#242429;border:1px solid #373742;border-radius:12px;padding:12px;">
+          <div style="color:#8F96AC;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Route Preview</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:20px;height:20px;border-radius:999px;background:#945DC8;"></div>
+            <span style="color:#fff;font-size:13px;">ETH</span>
+            <span style="color:#8F96AC;font-size:13px;">→</span>
+            <div style="width:20px;height:20px;border-radius:999px;background:#2172E5;"></div>
+            <span style="color:#fff;font-size:13px;">USDC</span>
+            <span style="color:#27AE60;font-size:12px;margin-left:auto;">Best route</span>
+          </div>
+          <div style="color:#8F96AC;font-size:12px;margin-top:6px;">Min received: 3,237.50 USDC • Fee: 0.05%</div>
+        </div>
+
+        <button style="width:100%;background:#945DC8;color:#fff;border:0;border-radius:16px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;">Preview Swap</button>
+        
+        <div style="margin-top:12px;display:flex;justify-content:space-between;">
+          <div style="color:#8F96AC;font-size:12px;">Network: Ethereum</div>
+          <div style="color:#27AE60;font-size:12px;">● Connected</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="options" style="margin-top:24px;">
+  <div class="option" data-choice="proceed" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>Looks good — implement this</h3>
+      <p>Proceed with the centered Kromatika-style swap terminal</p>
+    </div>
+  </div>
+  <div class="option" data-choice="tweak" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content">
+      <h3>Needs tweaks</h3>
+      <p>I want to adjust the layout or details</p>
+    </div>
+  </div>
+</div>

@@ -500,8 +500,6 @@ p {
   font-size: 0.82rem;
 }
 
-.slippage-control strong,
-.portfolio-impact strong,
 .swap-detail-grid strong {
   color: var(--text);
 }
@@ -522,8 +520,7 @@ p {
   text-align: left;
 }
 
-.token-selector:disabled,
-.disabled-action:disabled {
+.token-selector:disabled {
   cursor: not-allowed;
   opacity: 0.72;
 }
@@ -553,51 +550,14 @@ p {
 }
 
 .swap-input-helper,
-.swap-copy,
-.swap-disabled-copy {
+.swap-copy {
   margin: 0.65rem 0 0;
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.55;
 }
 
-.preview-safety-banner {
-  border: 1px solid rgba(34, 211, 238, 0.35);
-  border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(129, 140, 248, 0.08));
-  color: var(--text);
-  padding: 0.85rem 1rem;
-  font-size: 0.92rem;
-  font-weight: 700;
-}
 
-.swap-direction {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  margin: -0.25rem auto;
-  background: var(--panel);
-  color: var(--cyan);
-  font-size: 1.25rem;
-}
-
-.portfolio-impact {
-  align-items: flex-start;
-  padding: 1rem;
-}
-
-.portfolio-impact strong {
-  max-width: 18rem;
-  text-align: right;
-}
-
-.disabled-action {
-  width: 100%;
-  border: 0;
-}
 
 .route-steps {
   display: grid;
@@ -699,8 +659,6 @@ p {
   .hero,
   .grid,
   .panel-grid,
-  .swap-terminal-layout,
-  .swap-status-grid,
   .swap-detail-grid {
     grid-template-columns: 1fr;
   }
@@ -714,16 +672,9 @@ p {
     flex-direction: column;
   }
 
-  .swap-card-header,
-  .swap-token-header,
-  .portfolio-impact {
+  .swap-token-header {
     align-items: stretch;
     flex-direction: column;
-  }
-
-  .portfolio-impact strong {
-    max-width: none;
-    text-align: left;
   }
 
   .amount-input {

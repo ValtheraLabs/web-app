@@ -6,9 +6,9 @@ export default function SwapPage() {
   return (
     <Layout>
       <PageHeader
-        eyebrow="Exchange"
-        title="Asset terminal"
-        description="Preview swap intent, route context, wallet state, and risk guidance before real quote or execution wiring exists."
+        eyebrow="Preview terminal"
+        title="Swap command center"
+        description="Preview only. No transaction is built, signed, submitted, or simulated."
       />
       <SwapTerminal />
     </Layout>
